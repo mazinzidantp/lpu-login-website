@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LOVELY PROFESSIONAL UNIVERSITY</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background-image: url("lpu.jpeg"); /* Your background image */
+      background-size: cover;
+      background-position: center;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    .top-menu {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px;
+      background-color: rgba(255, 255, 255, 0.8);
+      border-bottom-left-radius: 10px;
+      border-bottom-right-radius: 10px;
+    }
+    .top-menu a {
+      color: black; /* Setting link color to black */
+      font-weight: bold; /* Making the text thicker */
+      text-decoration: none; /* Removing underline from links */
+      margin: 0 10px; /* Adding some space between links */
+    }
+    .top-right-options {
+      display: flex;
+      align-items: center;
+    }
+    .search-box {
+      display: flex;
+      align-items: center;
+    }
+    input[type="search"] {
+      padding: 5px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      font-weight: bold; /* Making the text thicker */
+      width: 200px;
+    }
+    .login-container {
+      background-color: rgba(255, 255, 255, 0.8);
+      padding: 20px;
+      border-radius: 10px;
+      text-align: center;
+      width: 300px; /* Adjust the width as needed */
+    }
+    input[type="text"], input[type="password"] {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    input[type="submit"] {
+      background-color: #4CAF50;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    input[type="submit"]:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+<body>
+  <div class="top-menu">
+    <div>
+      <a href="#">Students</a>
+      <a href="#">Faculty & Staff</a>
+      <a href="#">Families</a>
+      <a href="#">Visitors</a>
+      <a href="#">Alumni</a>
+    </div>
+    <div class="top-right-options">
+      <div class="search-box">
+        <input id="searchInput" type="search" placeholder="Search...">
+        <input id="searchButton" type="submit" value="Search">
+      </div>
+    </div>
+  </div>
+  <div class="login-container">
+    <h1>WELCOME TO LPU </h1>
+    <form action="login.php" method="post">
+      <input type="text" name="username" placeholder="Username">
+      <br>
+      <input type="password" name="password" placeholder="Password">
+      <br>
+      <input type="submit" value="Login">
+    </form>
+    <a href="forgot_password.php">Forgot Password?</a>
+    <br>
+    <a href="create_account.php">Create an Account</a>
+  </div>
+
+  <script>
+    document.getElementById("searchButton").addEventListener("click", function() {
+      var searchTerm = document.getElementById("searchInput").value.toLowerCase();
+      if (searchTerm.includes("fees")) {
+        window.location.href = "fees_page.html"; // Redirect to fees page
+      } else if (searchTerm.includes("scholarship")) {
+        window.location.href = "scholarship_page.html"; // Redirect to scholarship page
+      } else {
+        alert("No relevant results found."); // Display alert if no relevant results found
+      }
+    });
+  </script>
+</body>
+</html>
